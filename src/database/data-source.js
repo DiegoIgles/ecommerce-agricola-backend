@@ -17,7 +17,11 @@ const AppDataSource = new DataSource({
   database: process.env.DB_NAME,
   synchronize: true,
   logging: false,
+  ssl: {
+    rejectUnauthorized: false,
+  },
   entities: [Product, Cart, CartItem, Order, OrderItem, Category],
 });
+
 
 module.exports = { AppDataSource };
